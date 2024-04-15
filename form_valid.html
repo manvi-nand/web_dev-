@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="form_valid.css">
+</head>
+<body>
+
+    <div id="cookiesPopup" class="cookies-popup">
+        <p>This website uses cookies</p>
+        <button onclick="acceptCookies()">Accept</button>
+    </div>
+
+
+<form method="post" action="table.html">
+    <p>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" pattern="[A-Za-z]+" title="Username should only contain characters" required>
+    </p>
+    <p>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" pattern=".{5,}" title="Password should be at least 5 characters long" required>
+    </p>
+    <p>
+        <label for="confirmPassword">Re-enter Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+    </p>
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+   
+    document.querySelector("form").addEventListener("submit", function(event) {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            event.preventDefault(); 
+        }
+    });
+</script>
+
+<script src="cookies.js"></script>
+
+</body>
+</html>

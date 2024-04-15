@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Pop-ups and Functions</title>
+    <script>
+        // JavaScript functions here
+        function displayDate() {
+            var today = new Date();
+            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
+            document.getElementById('dateTextarea').value = date;
+        }
+
+        function fibonacciAlert() {
+            var n = parseInt(prompt("Enter a number:"));
+            var fib = [0, 1];
+            for (var i = 2; i <= n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            alert("Fibonacci of " + n + " is: " + fib[n]);
+        }
+
+        function multiplyByN() {
+            var n = parseInt(prompt("Enter a number:"));
+            var result = "";
+            for (var i = 1; i <= 10; i++) {
+                result += n + " X " + i + " = " + (n * i) + "\n";
+            }
+            alert(result);
+        }
+
+        function sumOfNumbers() {
+            var count = parseInt(prompt("Enter the count of numbers:"));
+            var numbers = prompt("Enter " + count + " numbers separated by space:").split(" ");
+            var sum = 0;
+            for (var i = 0; i < count; i++) {
+                sum += parseInt(numbers[i]);
+            }
+            alert("Sum of the numbers is: " + sum);
+        }
+    </script>
+</head>
+<body>
+    <!-- Buttons to trigger JavaScript functions -->
+    <button onclick="displayDate()">Display Date</button>
+    <textarea id="dateTextarea" rows="1" cols="20"></textarea>
+    <button onclick="fibonacciAlert()">Fibonacci of n</button>
+    <button onclick="multiplyByN()">nX1 to nX10</button>
+    <button onclick="sumOfNumbers()">Sum of n numbers</button>
+</body>
+</html>
