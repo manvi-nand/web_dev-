@@ -1,0 +1,16 @@
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Default button color */
+button.default {
+    background-color: #ff006a; /* Blue */
+ /* White */
+}
+
+/* Color when button is clicked */
+button.clicked {
+    background-color: #28a745; /* Green */
+}
